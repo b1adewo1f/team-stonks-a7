@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -9,6 +8,9 @@ var path = require('path');
 var handlebars = require('express3-handlebars')
 
 var index = require('./routes/index');
+var education = require("./routes/education");
+var investing = require("./routes/investing");
+var lesson_1 = require("./routes/lesson-1");
 // Example route
 // var user = require('./routes/user');
 
@@ -35,6 +37,12 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', index.view);
+app.get('/education', education.view);
+app.get('/investing', investing.view);
+app.get('/lesson-1', lesson_1.view);
+app.get('/:name', index.view);
+app.get('/investing:stockOne', investing.view);
+app.get('/investing:stockTwo', investing.view);
 // Example route
 // app.get('/users', user.list);
 

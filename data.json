@@ -1,0 +1,27 @@
+{
+  "profile": {
+    "fname": "Scott",
+    "lname": "Doe"
+  },
+  "education": {
+    "lesson_1": "3/5",
+    "lesson_2": "0/5",
+    "lesson_3": "0/5"
+  },
+  "investing": {
+    "personalStocks": {
+      "STOK": {
+        "owned": "5",
+        "price": "6.55"
+      },
+      "STON": {
+        "owned": "10",
+        "price": "10"
+      },
+      "STOL": {
+        "owned": "15",
+        "price": "54"
+      }
+    }
+  }
+}
