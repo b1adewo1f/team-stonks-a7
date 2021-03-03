@@ -7,12 +7,18 @@ var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
 
-var index = require('./routes/index');
-var education = require("./routes/education");
-var investing = require("./routes/investing");
-var lesson_1 = require("./routes/lesson-1");
 // Example route
 // var user = require('./routes/user');
+
+// Routes to Main Pages
+var index = require('./routes/index');
+var home = require('./routes/home');
+var education = require("./routes/education");
+var investing = require("./routes/investing");
+var profile = require("./routes/profile");
+var support = require("./routes/support");
+// Routes to Side Pages
+var lesson_1_graph = require("./routes/lesson-1-graph");
 
 var app = express();
 
@@ -36,15 +42,22 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+// Example route
+// app.get('/users', user.list);
+
+// Routes to Main Pages
 app.get('/', index.view);
+app.get('/home', home.view);
 app.get('/education', education.view);
 app.get('/investing', investing.view);
-app.get('/lesson-1', lesson_1.view);
+app.get('/profile', profile.view);
+app.get('/support', support.view);
+// Routes for Side Pages
+app.get('/lesson-1-graph', lesson_1_graph.view);
+//Routes for JSON
 app.get('/:name', index.view);
 app.get('/investing:stockOne', investing.view);
 app.get('/investing:stockTwo', investing.view);
-// Example route
-// app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

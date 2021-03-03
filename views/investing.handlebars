@@ -31,46 +31,44 @@
 	<div class="panel-group">
 		<!-- Graph -->
 		<!-- This is Panel 1! -->
-		<div class="panel panel-default" id="Review">
+		<div class="panel panel-default" id="StockPerformance">
 			<!-- Heading -->
 			<div class="panel-heading">
-				<h2>Total Investment</h2>
+				<h2>Stock Performance</h2>
 			</div>
 			<!-- Body -->
 			<div class="panel-body">
-				<!-- Image of a graph here -->
+				<p>No Stock Selected!
 			</div>
 		</div>
 		<!-- End of Panel 1 -->
 
-		<!-- Link 1 to Lesson 1 -->
+		<!-- Link 1 to Lesson 1: Graph -->
 		<!-- This is Panel 2! -->
-		<div class="panel panel-default" id="Review">
+		<div class="panel panel-default" id="ConceptReview1">
 			<!-- Body -->
 			<div class="panel-body">
 				<!-- The statement below would link a person to the appropriate
 						 section of lesson 1! -->
-				<h2>If you need to brush up on graphs, click me!</h2>
+				<a href="/lesson-1-graph"><h3>If you need to brush up on graphs, click me!</h3></a>
 			</div>
 		</div>
 		<!-- End of Panel 2 -->
 
 		<!-- Searching for Stocks -->
 		<!-- This is Panel 3! -->
-		<div class="panel panel-default" id="Review">
+		<div class="panel panel-default" id="StocksSearch">
 			<!-- Body -->
 			<div class="panel-body">
 			<!-- Below is the search bar for stocks. -->
-			<!-- This is just a placeholder form and not an important interaction. -->
+			<!-- Inputting a Company Code or Name (from JSON) should push a stock into "Your Stocks" -->
+			<!-- See Lab 5 -->
 				<form class="form-inline">
-  				<div class="form-group">
-    				<label class="sr-only">Company</label>
-  				</div>
-				  <div class="form-group">
-    				<label for="inputPassword2" class="sr-only">Find Company Name</label>
-    				<input type="password" class="form-control" id="inputPassword2" placeholder= "Search">
-  				</div>
-  				<button type="submit" class="btn btn-default">Search</button>
+					<div class="form-group">
+						<label for="exampleInputName2">Add Stock/s</label>
+						<input type="text" class="form-control" id="Company_Name" placeholder="Enter Company Name or Code Here!">
+					</div>
+					<button type="submit" class="btn btn-default">Add</button>
 				</form>
 			</div>
 		</div>
@@ -78,23 +76,26 @@
 
 		<!-- Link 2 to Lesson 1 -->
 		<!-- This is Panel 4! -->
-		<div class="panel panel-default" id="Review">
+		<div class="panel panel-default" id="ConceptReview2">
 			<!-- Body -->
 			<div class="panel-body">
 				<!-- The statement below would link a person to the appropriate
 						 section of lesson 1! -->
-				<h2>If you need to brush up on stock information, click me!</h2>
+				<h3>If you need to brush up on stock information, click me!</h3>
 			</div>
 		</div>
 		<!-- End of Panel 4 -->
 
 		<!-- Personal Investments -->
 		<!-- This is Panel 5! -->
-		<div class="panel panel-default" id="Review">
+		<div class="panel panel-default" id="PersonalStocks">
 			<!-- Heading -->
 			<div class="panel-heading">
 				<h2>Your Stocks</h2>
 			</div>
+			<!-- Each panel body can be a handlebars loop (see templates I emailed)! -->
+			<!-- Clicking on a stock will call AJAX and render info for the stock and the graph (see Lab 6) -->
+			<!-- For simplicity, we will not have a "Trade" page, which is not our concern. -->
 			<div class="panel-body">
 				<h3>{{stockOne}}</h3>
 			</div>
@@ -103,29 +104,33 @@
 			</div>
 		</div>
 		<!-- End of Panel 5 -->
+
 	</div>
-	<!-- End of Investing -->
+	<!-- End of Investing Section -->
 
 	<!-- Navbar -->
 	<nav class="navbar navbar-fixed-bottom">
-		<ul class="nav nav-tabs nav-justified">
-			<!-- Active denotes what page a user is currently on! -->
-			<li>
-    		<a href="/">Home</a>
-  		</li>
-			<li>
-    		<a href="/education">Education</a>
-  		</li>
-			<li class="active">
-    		<a href="/investing">Investing</a>
-  		</li>
-			<li>
-    		<a href="/profile">Profile</a>
-  		</li>
-			<li class="#">
-				<a href="/support">Support</a>
-			</li>
-    </ul>
+		<div class="container-fluid">
+			<ul class="nav nav-tabs nav-justified">
+				<!-- Active denotes what page a user is currently on! -->
+				<!-- The list below may be a handlebars loop! -->
+				<li>
+    			<a href="/home">Home</a>
+  			</li>
+				<li>
+    			<a href="/education">Education</a>
+  			</li>
+				<li class="active">
+    			<a href="/investing">Investing</a>
+  			</li>
+				<li>
+    			<a href="/profile">Profile</a>
+  			</li>
+				<li>
+					<a href="/support">Support</a>
+				</li>
+    	</ul>
+		</div>
 	</nav>
 </body>
 </html>

@@ -1,3 +1,3 @@
 exports.view = function (req, res) {
-    res.render('lesson-1');
+    res.render('lesson-1-graph');
 };
